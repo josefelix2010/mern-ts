@@ -21,11 +21,11 @@ export const VideoItem = ({ video, loadVideos }: Props) => {
 
 	return (
 		<div className="col-md-4">
-			<div className="card card-body video-card" style={{ cursor: "pointer" }}>
+			<div className="card card-body video-card" style={{ cursor: "pointer" }} onClick={() => navigate(`/update/${video._id}`)}>
 				<div className="d-flex justify-content-between">
-					<h1 onClick={() => navigate(`/update/${video._id}`)}>
+					<h3>
 						{video.title}
-					</h1>
+					</h3>
 					<span
 						className="text-danger"
 						onClick={() => video._id && handleDelete(video._id)}
@@ -34,14 +34,12 @@ export const VideoItem = ({ video, loadVideos }: Props) => {
 					</span>
 				</div>
 				<p>{video.description}</p>
-				<div className="player-wrapper">
+				<div className='player-wrapper'>
 					<ReactPlayer
+						className='react-player'
 						url={video.url}
-						className="react-player"
-						playing
-						width="100%"
-						height="100%"
-						controls={false}
+						width='100%'
+						height='100%'
 					/>
 				</div>
 			</div>

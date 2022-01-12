@@ -3,11 +3,6 @@
 }
 
 .player-wrapper {
-  position: relative; /* 720 / 1280 = 0.5625 */
+  position: relative;
 }
 
-.react-player {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
